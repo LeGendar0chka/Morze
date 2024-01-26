@@ -8,4 +8,33 @@ morse = {'A': '.-', 'B': '-...', 'C': '-.-.',
          'V': '...-', 'W': '.--', 'X': '-..-',
          'Y': '-.--', 'Z': '--..', ' ': '\t',
          ',': ',', '!': '!', '?': '?'}
-;lk
+
+revmorse = {
+    ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E", "..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J", "-.-": "K", 
+    ". -..": "L", "--": "M", "-.": "N",
+    "---": "O", ".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T", "..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y", 
+    "--..": "Z", "\t": " ", ",": ",", "!": "!", "?": "?"
+            }
+
+def main() -> str: 
+    while True:
+        n = int(input())
+        if n == 1:
+            print("".join(code(input())))
+        else:
+            print("".join(decode(input())))
+
+
+def decode(v) -> list[str]:
+    b = []
+    for i in v:
+        b.append(revmorse.get(i))
+    return b
+
+
+def code(a) -> list[str]:
+    b = []
+    for i in a:
+        b.append(morse.get(i))
+    return b
+main()
