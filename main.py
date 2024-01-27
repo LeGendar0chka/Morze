@@ -35,10 +35,7 @@ def main() -> str:
 
 
 def decode(v) -> list[str]:
-    b = []
-    for i in v:
-        b.append(revmorse.get(i))
-    return b
+    pass
 
 
 def code(a) -> list[str]:
